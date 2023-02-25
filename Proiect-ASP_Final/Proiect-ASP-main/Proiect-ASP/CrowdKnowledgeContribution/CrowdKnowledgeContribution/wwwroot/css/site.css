@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Cormorant+Garamond&family=Dancing+Script:wght@700&family=Great+Vibes&family=Parisienne&family=Passions+Conflict&family=Playfair+Display:wght@600&display=swap');
+
+* {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+
+.logout {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+    .logout:hover {
+        color: #3c6382 !important;
+    }
+
+h1.titlu {
+    text-align: center;
+    color: #0a3d62 !important;
+    font-family: 'Passions Conflict', cursive;
+    font-size: 70px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.navbar {
+    background-color: #82ccdd !important;
+    border: none !important;
+    box-shadow: 0 3px 12px #636e72 !important;
+}
+
+a.nav-link {
+    color: #2c2c2c !important;
+}
+
+    a.nav-link:hover {
+        color: #3c6382 !important;
+    }
+
+.logoutbtn {
+    color: #2c2c2c !important;
+}
+
+    .logoutbtn:hover {
+        color: #00b894 !important;
+    }
+
+.navbar-brand {
+    color: #0a3d62 !important;
+    font-family: 'Passions Conflict', cursive;
+    font-size: 40px;
+}
+
+.btn-primary {
+    background-color: #3c6382 !important;
+}
+
+.btn-outline-primary {
+    color: #3c6382 !important;
+    background-color: white !important;
+    border-color: #3c6382 !important;
+}
+
+    .btn-outline-primary:hover {
+        color: white !important;
+        background-color: #3c6382 !important;
+    }
+
+.alert-dismissible {
+    background-color: #60a3bc !important;
+    color: floralwhite !important;
+}
+.alert-primary {
+    background-color: #82ccdd !important;
+    color: #3c6382 !important;
+}
+
+.alert-secondary {
+    background-color: #3c6382 !important;
+    color: #82ccdd !important;
+}
+
+.alert-succes {
+    background-color: #82ccdd !important;
+    color: #0c2461 !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+    color: #0c2461 !important;
+}
+
+.btn-outline-success {
+    color: #0c4128 !important;
+    background-color: white !important;
+    border-color: #0c4128 !important;
+}
+
+    .btn-outline-success:hover {
+        color: #0c4128 !important;
+        background-color: #d1e7dd !important;
+    }
+
+.btn-outline-danger {
+    color: #6a1a21 !important;
+    background-color: white !important;
+    border-color: #6a1a21 !important;
+}
+
+    .btn-outline-danger:hover {
+        color: #6a1a21 !important;
+        background-color: #f8d7da !important;
+    }
+
+.search {
+    background-color: #0a3d62 !important;
+    color: white !important;
+}
+
+.bg-light {
+    color: #3c6382 !important;
+}
+
+.note-editor .dropdown-toggle::after {
+    display: none;
+}

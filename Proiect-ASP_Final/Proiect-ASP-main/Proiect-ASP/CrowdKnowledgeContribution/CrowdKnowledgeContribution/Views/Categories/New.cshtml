@@ -1,0 +1,50 @@
+﻿@*
+@using (Html.BeginForm(actionName: "New", controllerName: "Categories", method: FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.Label("CategoryName", "Denumire categorie")
+    <br />
+
+    @Html.TextBox("CategoryName", null, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Icon", "Icon categorie")
+    <br />
+
+    @Html.TextBox("Icon", null, new { type = "file", @class = "form-control" })
+
+    @Html.ValidationMessageFor(m => m.CategoryName, null, new { @class = "text-danger" })
+    <br />
+    <br />
+
+    <button class="btn alert-success" type="submit">Adauga categorie</button>
+
+}
+*@
+
+@{
+    ViewBag.Title = "Adaugare Categorie";
+}
+
+@if (ViewBag.Message != null)
+{
+    <h2 class="alert-danger p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+
+
+<h1 class="titlu">Adaugare Categorie</h1>
+
+
+<form enctype="multipart/form-data" asp-controller="Categories" asp-action="New">
+
+    <input class="form-control" placeholder="Denumire" type="text" name="CategoryName" />
+
+    <br />
+
+    <input class="form-control" type="file" name="Icon" />
+
+    <br />
+
+    <input class="btn alert-success" type="submit" value="Adauga categorie" />
+
+</form>

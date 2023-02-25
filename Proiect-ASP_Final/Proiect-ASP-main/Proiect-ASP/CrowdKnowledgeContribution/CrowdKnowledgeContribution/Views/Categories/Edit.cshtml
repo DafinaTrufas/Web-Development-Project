@@ -1,0 +1,26 @@
+﻿@model CrowdKnowledgeContribution.Models.Category
+
+@{
+    ViewBag.Title = "Editare Categorie";
+}
+
+@if (ViewBag.Message != null)
+{
+    <h2 class="alert-danger p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+
+<h1 class="titlu">Editare Categorie</h1>
+
+<form enctype="multipart/form-data" asp-controller="Categories" asp-action="Edit">
+
+    <input class="form-control" placeholder="Denumire" type="text" name="CategoryName" value= @Model.CategoryName />
+
+    <br />
+
+    <input class="form-control" type="file" name="Icon" />
+
+    <br />
+
+    <input class="btn alert-success" type="submit" value="Modifica categorie" />
+
+</form>

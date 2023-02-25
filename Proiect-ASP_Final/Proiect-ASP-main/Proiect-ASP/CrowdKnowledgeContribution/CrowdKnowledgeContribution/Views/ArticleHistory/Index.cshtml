@@ -1,0 +1,36 @@
+﻿@model CrowdKnowledgeContribution.Models.ArticleHistory
+
+
+<table class="table">
+    <thead class="text-center">
+        <tr>
+            <th>TITLU</th>
+            <th width="40%">CONTINUT</th>
+            <th>DATA</th>
+            <th>CATEGORIE</th>
+            <th>ACTIUNE</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CrowdKnowledgeContribution.Models.ArticleHistory article in ViewBag.Istoric)
+        {
+
+            <tr>
+                <th class="text-center">@article.Title</th>
+                <th>@Html.Raw(@article.Content)</th>
+                <th class="text-center">@article.Date</th>
+                <th class="text-center">@article.Category.CategoryName</th>
+
+                <th>
+                    <button class="btn search" type="submit">@Html.ActionLink("Update", "UpdateArticle", "ArticleHistory", new{id = article.Id, date = article.Date}, new{style = "text-decoration:none; color: white"})</button>
+                </th>
+
+            </tr>
+
+
+
+        }
+
+    </tbody>
+</table>

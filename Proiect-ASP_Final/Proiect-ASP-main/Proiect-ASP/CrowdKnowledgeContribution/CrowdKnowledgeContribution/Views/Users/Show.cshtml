@@ -1,0 +1,45 @@
+﻿@model CrowdKnowledgeContribution.Models.ApplicationUser
+@{
+    ViewBag.Title = "Afisare utilizator";
+}
+
+
+<h1 class="titlu">@ViewBag.Title</h1>
+
+<br />
+
+<p>@Model.UserName</p>
+
+<div class="d-flex flex-row justify-content-between p-3 border-1 border-top">
+    @if (ViewBag.AfisareBlock == true)
+    {
+        <form method="post" action="/Users/Block/@Model.Id">
+
+            <button class="btn alert-warning" type="submit"><i class="bi bi-person-fill-x"></i>Blocheaza editor</button>
+
+        </form>
+    }
+    @if (ViewBag.AfisareUnBlock == true)
+    {
+        <form method="post" action="/Users/UnBlock/@Model.Id">
+
+            <button class="btn alert-warning" type="submit"><i class="bi bi-person-fill-check"></i>Deblocheaza editor</button>
+
+        </form>
+    }
+
+        <form method="post" action="/Users/Delete/@Model.Id">
+
+            <button class="btn alert-danger" type="submit">Sterge utilizator</button>
+
+        </form>
+
+</div>
+
+
+<br />
+<a class="btn alert-success" href="/Users/Index/">Afisare lista utilizatori</a>
+
+<br />
+<hr />
+<br />

@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Show";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="bg-transparent rounded-3 p-5 mb-4 alert-primary bg-opacity-25">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-body d-flex flex-column align-content-center justify-content-center">
+                        <h1 class="fw-bold">Crowd Knowledge Contribution</h1>
+                        <br />
+
+
+                        <h2>Va prezinta articolele din categoria @ViewBag.Category.CategoryName</h2>
+                        <br />
+
+                        <h3>Optiuni de sortare:</h3>
+                        <div class="container d-flex flex-column align-items-baseline">
+
+                            <p class="btn btn-outline-primary"><i class="bi bi-file-text"></i>@Html.ActionLink("Alfabetic", "Show", "Home", new{sortingOrder = "Alfabetic"})</p>
+                            <p class="btn btn-outline-primary"><i class="bi bi-calendar"></i>@Html.ActionLink("Cronologic", "Show", "Home", new{sortingOrder = "Cronologic"})</p>
+                            <p class="btn btn-outline-primary"><i class="bi bi-pen"></i>@Html.ActionLink("Dupa autor", "Show", "Home", new{sortingOrder = "Autor"})</p>
+
+                            <!--<a href="/Home/Show/@ViewBag.Category.Id/?sortingOrder=Alfabetic/" class="btn btn-secondary"><i class="bi bi-file-text"></i>Alfabetic</a>-->
+                            <!--<a href="/Home/Show/@ViewBag.Category.Id/?sortingOrder=Cronologic/" class="btn btn btn-secondary" style="margin-top: 5px"><i class="bi bi-calendar"></i>Cronologic</a> -->
+                            <!--<a href="/Home/Show/@ViewBag.Category.Id/?sortingOrder=Autor/" class="btn btn btn-secondary" style="margin-top: 5px"><i class="bi bi-pen"></i>Dupa autor</a>-->
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <img src="@ViewBag.Category.Icon" width="300" height="350" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    @foreach (CrowdKnowledgeContribution.Models.Article article in ViewBag.Articles)
+    {
+        <div class="col-6 row-style">
+            <div class="card bg-transparent alert-primary rounded-3">
+                <div class="card-title p-3 text-center alert-secondary">
+                    <h2>@Html.Raw(article.Title)</h2>
+                </div>
+
+                <div class="card-body">
+                    <div>@Html.Raw(article.Content)</div>
+                </div>
+                <div class="card-footer d-flex flex-row justify-content-between">
+                    <p>@Html.Raw(article.User)</p>
+                    <a class="btn btn-primary" href="/Articles/Show/@article.Id">Vezi Articolul</a>
+                </div>
+            </div>
+            <br />
+        </div>
+        <br />
+    }
+
+</div>
+
+
+
+
+@*
+<div class="row mb-4">
+    @foreach (CrowdKnowledgeContribution.Models.Article article in ViewBag.Articles)
+    {
+        <div class="col-6 row-style">
+
+            <div class="card bg-transparent alert-primary rounded-3">
+                <div class="card-title p-3 text-center alert-secondary">
+                    <h2>@Html.Raw(article.Title)</h2>
+                </div>
+
+                <div class="card-body">
+                    <div>@Html.Raw(article.Content)</div>
+                </div>
+                <div class="card-footer d-flex flex-row justify-content-between">
+                    <p>@Html.Raw(article.User)</p>
+                    <a class="btn btn-primary" href="/Articles/Show/@article.Id">Vezi Articolul</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <br />
+    }
+    <br />
+</div>
+*@

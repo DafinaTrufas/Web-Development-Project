@@ -1,0 +1,38 @@
+﻿@model CrowdKnowledgeContribution.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Adaugare utilizator";
+}
+
+
+<h1 class="titlu">Adaugare Utilizator</h1>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Users", method: FormMethod.Post))
+{
+
+    @Html.Label("UserName", "Nume de utilizator")
+    <br />
+
+    @Html.TextBox("UserName", null, new { @class = "form-control" })
+
+    @Html.Label("Email", "Adresa de email")
+    <br />
+
+    @Html.TextBox("Email", null, new { @class = "form-control" })
+
+    @Html.Label("PasswordHash", "Parola")
+    <br />
+
+    @Html.PasswordFor(m => m.PasswordHash)
+
+    @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text-danger" })
+    <br />
+
+    <label>Selectati rolul</label>
+    @Html.DropDownList("role", new SelectList(Model.AllRoles, "Value", "Text"), null, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn alert-success" type="submit">Adauga utilizator</button>
+
+}

@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="bg-transparent rounded-3 p-5 mb-4 alert-primary bg-opacity-25">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8857/8857932.png" class="img-fluid align-items-center justify-content-center" />
+                </div>
+
+                <div class="col-md-8">
+
+                    <h1 class="fw-bold">Crowd Knowledge Contribution</h1>
+                    <br />
+             
+
+                    <h2 class="fw-bold">Cine suntem noi?</h2>
+
+                    <p>
+                        Bine ai venit pe pagina noastra!<br />
+                        Suntem o comunitate restransa ce isi propune sa te tina la curent cu toate stirile locale.<br />
+                        Pe pagina noastra vei gasi cele mai recente articole din toate domeniile tale de interes.
+                        Iti punem la dispozitie stiri din domenii precum sport, muzica, arta si nu numai. <br />
+                        Speram sa te bucuri de timpul petrecut aici si sa citesti cu drag articolele postate de autorii nostri.<br />
+                        Spor la informare si te mai asteptam pe pagina noastra!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@foreach(CrowdKnowledgeContribution.Models.Article article in ViewBag.Articles)
+{
+    <div class="col-12">
+        <div class="bg-light rounded-3 p-5 mb-4 d-flex flex-column align-content-between justify-content-evenly">
+            
+            <div class="card-title py-3 px-3 rounded-2 alert-succes">
+                <h1 class="text-center">@Html.Raw(article.Title)</h1>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 d-flex flex-column align-items-center justify-content-lg-center p-2">
+                    <img src="@article.Category.Icon" width="150", height="170"/>
+
+                    <br />
+
+                    <label><i class="bi bi-tag"></i>@Html.Raw(article.Category.CategoryName)</label>
+                </div>
+
+                <div class="col-md-10 d-flex flex-column align-items-center justify-content-lg-center p-2">
+
+                    <div class="card-body">
+                        <div>
+                            @Html.Raw(article.Content)
+                        </div>
+                    </div>
+                 </div>
+
+
+            </div>
+
+            <div class="d-flex flex-row align-items-lg-start justify-content-between">
+                <a href="/Home/Show/@article.CategoryId" class="btn btn-secondary" style="margin-left: 24.5px">Toate articolele</a>
+                <a href="/Articles/Show/@article.Id/" class="btn btn-secondary">Vezi articolul</a>
+            </div>
+
+        </div>
+    </div>
+}
